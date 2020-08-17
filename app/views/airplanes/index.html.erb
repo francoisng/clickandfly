@@ -1,0 +1,21 @@
+ <div class="container mt-3">
+
+
+    <h1>All our Airplanes</h1>
+
+  </div>
+
+    <% @airplanes.each do |airplane| %>
+      <p><%= airplane.address %></p>
+      <p><%= airplane.model %></p>
+      <p><%= airplane.category %></p>
+      <p><%= airplane.range %></p>
+      <p><%= airplane.seat_capacity %></p>
+      <p><%= airplane.daily_price %></p>
+
+
+
+<% end %>
+
+
+

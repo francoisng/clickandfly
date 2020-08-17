@@ -27,4 +27,3 @@ gitclass AirplanesController < ApplicationController
     params.require(:airplane).permit(:address, :model, :category, :seat_capacity, :range, :daily_price)
   end
 
-
