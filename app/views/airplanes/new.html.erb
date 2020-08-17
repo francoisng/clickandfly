@@ -1,16 +1,23 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1>Add a plane</h1>
-      <%= simple_form_for @airplane do |f| %>
-        <%= f.input :model, collection: %w[Cessna Dassault Gulfstream] %>
-        <%= f.input :category %>
-        <%= f.input :seat_capacity %>
-        <%= f.input :range %>
-        <%= f.input :address %>
-        <%= f.input :daily_price %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+<!-- <div class="background-plane-img"> -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h1 style="text-align: center;">Add your plane</h1>
+        <%= simple_form_for @airplane do |f| %>
+          <%= f.input :model, collection: %w[Cessna Cirrus Dassault Gulfstream] %>
+          <%= f.input :category, collection: ["Regional jet", "Light jet", "Medium jet", "Long haul jet" ] %>
+          <%= f.input :seat_capacity %>
+          <%= f.input :range %>
+          <%= f.input :address %>
+          <%= f.input :daily_price %>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<!-- </div>
+.background-plane-img {
+  background-image: url(https://thegoodlife.thegoodhub.com/wp-content/thumbnails/uploads/sites/2/2019/11/aman-jet-insert-04-tt-width-1560-height-1000-max_width-2000-max_height-1000-crop-1-bgcolor-ffffff.jpg);
+  background-size: cover;
+}
+ -->
