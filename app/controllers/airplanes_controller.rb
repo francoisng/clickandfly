@@ -1,12 +1,11 @@
 class AirplanesController < ApplicationController
 
   def index
-    @airplanes = Airplanes.all
+    @airplanes = Airplane.all
   end
 
   def show
     @airplane = Airplane.find(params[:id])
-    @booking = Booking.new
   end
 
   def new
@@ -20,5 +19,11 @@ class AirplanesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+ private
+
+  def airplane_params
+    params.require(:airplane).permit(:address, :model, :category, :seat_capacity, :range, :daily_price)
   end
 end
