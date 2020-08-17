@@ -1,4 +1,4 @@
-class AirplanesController < ApplicationController
+gitclass AirplanesController < ApplicationController
 
   def index
     @airplanes = Airplane.all
@@ -21,9 +21,10 @@ class AirplanesController < ApplicationController
     end
   end
 
- private
+  private
 
   def airplane_params
     params.require(:airplane).permit(:address, :model, :category, :seat_capacity, :range, :daily_price)
   end
-end
+
+
