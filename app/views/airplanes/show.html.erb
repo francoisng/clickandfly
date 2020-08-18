@@ -1,7 +1,7 @@
 
 
 <div class="container">
-      <h1 class="border border-secondary" class= "rounded"><%= @airplane.model%></h1>
+   <h1 class="border border-secondary" class= "rounded"><%= @airplane.model%></h1>
       <p><strong>Propriétaire du jet:</strong> <%= @airplane.user_id %></p>
       <p><strong>>Modèle du jet:</strong> <%= @airplane.model %></p>
       <p><strong>>catégorie du jet:</strong> <%= @airplane.category %></p>
@@ -24,8 +24,6 @@
 
 
   <%= link_to " Retourner à la Liste des jets", airplanes_path, class: "btn btn-primary" %>
-
-
 
 
 
