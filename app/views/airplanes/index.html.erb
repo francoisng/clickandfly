@@ -1,19 +1,16 @@
- <div class="container mt-3">
+ <div class="container">
 
-
-    <h1>All our Airplanes</h1>
-
-  </div>
+    <h1>Liste de tous les jets</h1>
 
     <% @airplanes.each do |airplane| %>
-      <p><%= airplane.address %></p>
-      <p><%= airplane.model %></p>
-      <p><%= airplane.category %></p>
-      <p><%= airplane.range %></p>
-      <p><%= airplane.seat_capacity %></p>
-      <p><%= airplane.daily_price %></p>
 
+      <p> <strong>5/Localisation :</strong><%= airplane.address %></p>
+      <p> <strong>1/Modèle du jet:</strong> <%= airplane.model %></p>
+      <p> <strong>6/Prix à la journée: </strong><%= airplane.daily_price %> euros</p>
 
+   <!--    <p><%= link_to 'Show', airplane %></p> -->
+
+ </div>
 
 <% end %>
 
