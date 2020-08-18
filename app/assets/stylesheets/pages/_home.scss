@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+.content-wrapper {
+  min-height: calc(100vh - 83px - 100px);
+}
+
+.home-background{
+  height: calc(100vh - 83px - 100px);
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
