@@ -13,7 +13,9 @@ class AirplanesController < ApplicationController
   end
 
   def create
+    @user = current_user
     @airplane = Airplane.new(airplane_params)
+    @airplane.user = @user
     if @airplane.save
       redirect_to airplane_path(@airplane)
     else
