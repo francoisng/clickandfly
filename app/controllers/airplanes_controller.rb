@@ -6,7 +6,7 @@ class AirplanesController < ApplicationController
 
   def show
     @airplane = Airplane.find(params[:id])
-    # @booking = Booking.new(airplane_id:@airplane.id)
+    @booking = Booking.new
     authorize @airplane
   end
 

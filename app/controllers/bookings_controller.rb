@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def create
+    @bookings = policy_scope(Booking).order(created_at: :desc)
     @booking = Booking.new(booking_params) # je crée une nouvelle variable + je lui donne les données de mon formulaire
     @airplane = Airplane.find(params[:airplane_id]) # je recupère l'id de airplane dans les params de ma page
     @booking.airplane_id = @airplane.id # je donne la donnée  recupérée en ligne 4
@@ -12,6 +13,7 @@ class BookingsController < ApplicationController
     else
        redirect_to airplane_path(@airplane), notice: 'Start again!'
     end
+    authorize @booking
   end
 
   private
