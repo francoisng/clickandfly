@@ -8,12 +8,12 @@ body, html {
   height: 100%;
 }
 
-.bg {
+.home-background {
   /* The image used */
-  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
 
   /* Full height */
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
 
   /* Center and scale the image nicely */
   background-position: center;
