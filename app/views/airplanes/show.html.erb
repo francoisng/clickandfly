@@ -1,20 +1,28 @@
 
 
 <div class="container">
-
-    <h1> Modèle du jet : <%= @airplane.model %></h1>
-
-      <p><strong>1/Modèle du jet:</strong> <%= @airplane.model %></p>
-      <p><strong>2/catégorie du jet:</strong> <%= @airplane.category %></p>
-      <p><strong>3/Distance:</strong> <%= @airplane.range %></p>
-      <p><strong>4/Capacité :</strong><%= @airplane.seat_capacity %></p>
-      <p><strong>5/Localisation :</strong><%= @airplane.address %></p>
-      <p><strong>6/Prix à la journée: </strong><%= @airplane.daily_price %></p>
-
-     </div>
-
+   <h1 class="border border-secondary" class= "rounded"><%= @airplane.model%></h1>
       <p><strong>Propriétaire du jet:</strong> <%= @airplane.user_id %></p>
+      <p><strong>>Modèle du jet:</strong> <%= @airplane.model %></p>
+      <p><strong>>catégorie du jet:</strong> <%= @airplane.category %></p>
+      <p><strong>>Distance:</strong> <%= @airplane.range %></p>
+      <p><strong>>Capacité :</strong><%= @airplane.seat_capacity %></p>
+      <p><strong>>Localisation :</strong><%= @airplane.address %></p>
+      <p><strong>>Prix à la journée: </strong><%= @airplane.daily_price %></p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h1 style="text-align: center;">Book your plane</h1>
+        <%= simple_form_for [@airplane, @booking] do |f| %>
+          <%= f.input :start_date%>
+          <%= f.input :end_date%>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
 
+  <%= link_to " Retourner à la Liste des jets", airplanes_path, class: "btn btn-primary" %>
 
 
