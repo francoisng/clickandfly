@@ -1,0 +1,16 @@
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h1 style="text-align: center;">Add your plane</h1>
+        <%= simple_form_for @airplane do |f| %>
+          <%= f.input :model, collection: %w[Cessna Cirrus Dassault Gulfstream] %>
+          <%= f.input :category, collection: ["Regional jet", "Light jet", "Medium jet", "Long haul jet" ] %>
+          <%= f.input :seat_capacity %>
+          <%= f.input :range %>
+          <%= f.input :address %>
+          <%= f.input :daily_price %>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
