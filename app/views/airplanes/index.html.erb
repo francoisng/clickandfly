@@ -1,18 +1,12 @@
  <div class="container">
-
     <h1>Liste de tous les jets</h1>
-
     <% @airplanes.each do |airplane| %>
-
       <p> <strong>5/Localisation :</strong><%= airplane.address %></p>
       <p> <strong>1/Modèle du jet:</strong> <%= airplane.model %></p>
       <p> <strong>6/Prix à la journée: </strong><%= airplane.daily_price %> euros</p>
-
-   <!--    <p><%= link_to 'Show', airplane %></p> -->
-
+    <% end %>
  </div>
 
-<% end %>
 
 
 
