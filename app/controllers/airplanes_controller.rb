@@ -1,15 +1,17 @@
 class AirplanesController < ApplicationController
 
   def index
-    @airplanes = Airplane.all
+    @airplanes = policy_scope(Airplane).order(created_at: :desc)
   end
 
   def show
     @airplane = Airplane.find(params[:id])
+    authorize @airplane
   end
 
   def new
     @airplane = Airplane.new
+    authorize @airplane
   end
 
   def create
@@ -21,6 +23,7 @@ class AirplanesController < ApplicationController
     else
       render 'new'
     end
+    authorize @airplane
   end
 
   private
