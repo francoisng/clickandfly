@@ -1,6 +1,10 @@
+$background-color : #413838;
+$font-color : #c0c1c5;
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $background-color;
+  color: $font-color;
 }
 
 .navbar-lewagon .navbar-collapse {
