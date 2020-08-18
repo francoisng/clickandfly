@@ -9,9 +9,8 @@ $headings-font-family:    $headers-font;
 $body-bg:                 $light-gray;
 $font-size-base: 1rem;
 
-
 // Colors
-$body-color: #c0c1c5;
+$body-color: $gray;
 $primary:    $blue;
 $success:    $green;
 $info:       $yellow;
@@ -24,3 +23,5 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+$body-bg: #c0c1c5;
+$body-color: #c0c1c5;
