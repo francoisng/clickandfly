@@ -1,5 +1,5 @@
 $background-color : #413838;
-$font-color : #c0c1c5;
+$font-color : #efe1b4;
 
 .navbar-lewagon {
   justify-content: space-between;
@@ -13,4 +13,12 @@ $font-color : #c0c1c5;
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $font-color;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+ color: #f8faef;
 }
