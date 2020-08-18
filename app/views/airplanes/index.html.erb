@@ -4,10 +4,11 @@
 
     <% @airplanes.each do |airplane| %>
 
+<%= link_to airplane_path(airplane) do %>
       <p> <strong>5/Localisation :</strong><%= airplane.address %></p>
       <p> <strong>1/Modèle du jet:</strong> <%= airplane.model %></p>
       <p> <strong>6/Prix à la journée: </strong><%= airplane.daily_price %> euros</p>
-
+<% end %>
    <!--    <p><%= link_to 'Show', airplane %></p> -->
     <% end %>
  </div>

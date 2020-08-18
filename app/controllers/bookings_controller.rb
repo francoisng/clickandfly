@@ -4,8 +4,14 @@ class BookingsController < ApplicationController
     @airplane = Airplane.find(params[:airplane_id]) # je recupère l'id de airplane dans les params de ma page
     @booking.airplane_id = @airplane.id # je donne la donnée  recupérée en ligne 4
     @booking.user_id = current_user.id #je recupère la dernière donnée pour créer mon instance booking
-    @booking.save #maintenant qu ej'ai toutre sles odnnées j'enregsire
-    redirect_to airplane_path(@airplane)
+    #@booking.save #maintenant qu ej'ai toutre sles odnnées j'enregsire
+    #redirect_to airplane_path(@airplane)
+    if @booking.save
+       redirect_to airplane_path(@airplane), notice: 'Thank You For booking!'
+      #format.json  { render json: Email.create(email_params) }
+    else
+       redirect_to airplane_path(@airplane), notice: 'Start again!'
+    end
   end
 
   private
