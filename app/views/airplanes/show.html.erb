@@ -1,31 +1,48 @@
 
 
 <div class="container">
-   <h1 class="border border-secondary" class= "rounded"><%= @airplane.model%></h1>
+   <h1><%= @airplane.model%></h1>
       <% @airplane.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <p><strong>> Propriétaire du jet:</strong> <%= @airplane.user_id %></p>
-      <p><strong>> Modèle du jet:</strong> <%= @airplane.model %></p>
-      <p><strong>> Catégorie du jet:</strong> <%= @airplane.category %></p>
-      <p><strong>> Distance:</strong> <%= @airplane.range %></p>
-      <p><strong>> Capacité :</strong><%= @airplane.seat_capacity %></p>
-      <p><strong>> Localisation :</strong><%= @airplane.address %></p>
-      <p><strong>> Prix à la journée: </strong><%= @airplane.daily_price %></p>
 
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <h1 style="text-align: center;">Book your plane</h1>
+<div class="booking">
+    <div class="airplane-infos">
+      <p><strong>> Category of the airplane:</strong> <%= @airplane.category %></p>
+      <p><strong>> Range:</strong> <%= @airplane.range%> km </p>
+      <p><strong>> Capacity : </strong><%= @airplane.seat_capacity %> people</p>
+      <p><strong>> Location : </strong><%= @airplane.address %></p>
+      <p><strong>> Price for a day: </strong><%= @airplane.daily_price %> euros</p>
+   </div>
+   <div class="booking-form row">
+      <!-- <div class="col-md-8">
+      <div class= "border border-secondary" >
+      <div class= "rounded" > -->
+
         <%= simple_form_for [@airplane, @booking] do |f| %>
           <%= f.input :start_date %>
           <%= f.input :end_date %>
           <%= f.button :submit, class: 'btn btn-primary' %>
-        <% end %>
-      </div>
+          <% end %>
+    <!--     </div>
+        </div>
+       </div> -->
     </div>
   </div>
 
+</div>
 
-  <%= link_to "Retourner à la Liste des jets", airplanes_path, class: "btn btn-primary" %>
+
+
+<hr>
+
+<div>
+  <div>
+    <div>
+
+    </div>
+  </div>
+</div>
+
 
 
