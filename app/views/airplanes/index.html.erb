@@ -2,7 +2,8 @@
    <h1 class="border border-secondary" >Liste de tous les jets</h1>
     <% @airplanes.each do |airplane| %>
       <%= link_to airplane_path(airplane) do %>
-      <p> <strong>> Modèle du jet:</strong> <%= airplane.model %></p>
+      <%= cl_image_tag airplane.photo.key, height: 300, width: 400, crop: :fill %>
+      <p> <strong> Modèle du jet:</strong> <%= airplane.model %></p>
       <p> <strong> Localisation :</strong><%= airplane.address %></p>
       <p> <strong>Prix à la journée: </strong><%= airplane.daily_price %> euros</p>
     <% end %>
