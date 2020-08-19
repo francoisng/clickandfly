@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
   get "dashboard", to: "pages#dashboard"
-  root to: 'pages#home'
+    root to: 'pages#home'
 end
