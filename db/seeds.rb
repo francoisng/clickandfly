@@ -16,7 +16,7 @@ User.create!(email: "stan@gmail.com", password: "stanislas")
 User.create!(email: "roger@gmail.com", password: "roger1")
 
 model = ["Cessna Denali", "Cessna Caravan", "Cirrus SR20", "Cirrus SR22", "Dassault Falcon", "Gulfstream G700"]
-location = ["94390 Orly", "Charles de Gaulle, 95700 Roissy-en-France", "Dubai - U.A.E", "Manhattan, U.S.A"]
+location = ["Orly", "Charles de Gaulle, 95700 Roissy-en-France", "Dubai - U.A.E", "Manhattan, U.S.A"]
 
 users = User.all
 model.each do |model|

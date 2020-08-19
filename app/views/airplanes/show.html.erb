@@ -4,7 +4,7 @@
     <div class= "one ml-5">
       <h1><%= @airplane.model%></h1>
        <% @airplane.photos.each do |photo| %>
-       <%= cl_image_tag photo.key, height: 250, width: 350, crop: :fill %>
+       <%= cl_image_tag photo.key, height: 250, width: 350, crop: :fill, class:"photo-modif"%>
       <% end %>
     </div>
 
