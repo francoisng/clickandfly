@@ -1,0 +1,16 @@
+<h1 class="container"> Hello, <%=@user.email%></h1>
+
+<div>
+<% @user.bookings.each do |booking| %>
+  <div>
+    <ul>
+   <strong><li > <%= booking.airplane.model %> : </li> </strong>
+   From <%= booking.start_date %> to <%= booking.end_date %>
+
+   </ul>
+  </div>
+
+
+<% end %>
+</div>
+

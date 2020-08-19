@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     #@booking.save #maintenant qu ej'ai toutre sles odnnées j'enregsire
     #redirect_to airplane_path(@airplane)
     if @booking.save
-       redirect_to airplane_path(@airplane), notice: 'Thank You For booking!'
+       redirect_to dashboard_path, notice: 'Thank You For booking!'
       #format.json  { render json: Email.create(email_params) }
     else
        redirect_to airplane_path(@airplane), notice: 'Start again!'
