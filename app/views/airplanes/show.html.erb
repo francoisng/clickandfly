@@ -1,48 +1,27 @@
 
 
-<div class="container">
-   <h1><%= @airplane.model%></h1>
-      <% @airplane.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="booking mt-3">
+    <div class= "one ml-5">
+      <h1><%= @airplane.model%></h1>
+       <% @airplane.photos.each do |photo| %>
+       <%= cl_image_tag photo.key, height: 250, width: 350, crop: :fill %>
       <% end %>
+    </div>
 
-<div class="booking">
-    <div class="airplane-infos">
-      <p><strong>> Category of the airplane:</strong> <%= @airplane.category %></p>
-      <p><strong>> Range:</strong> <%= @airplane.range%> km </p>
-      <p><strong>> Capacity : </strong><%= @airplane.seat_capacity %> people</p>
-      <p><strong>> Location : </strong><%= @airplane.address %></p>
-      <p><strong>> Price for a day: </strong><%= @airplane.daily_price %> euros</p>
+    <div class="airplane-infos ml-5">
+      <li><strong> Category of the airplane:</strong> <%= @airplane.category %></li>
+      <li><strong> Range:</strong> <%= @airplane.range%> km </li>
+      <li><strong> Capacity : </strong><%= @airplane.seat_capacity %> people</li>
+      <li><strong> Location : </strong><%= @airplane.address %></li>
+      <li><strong> Price for a day: </strong><%= @airplane.daily_price %> euros</li>
    </div>
-   <div class="booking-form row">
-      <!-- <div class="col-md-8">
-      <div class= "border border-secondary" >
-      <div class= "rounded" > -->
-
-        <%= simple_form_for [@airplane, @booking] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+   <div class="booking-form row ml-5">
+      <%= simple_form_for [@airplane, @booking] do |f| %>
+         <strong> <%= f.input :start_date %> </strong>
+          <strong>  <%= f.input :end_date %> </strong>
           <%= f.button :submit, class: 'btn btn-primary' %>
-          <% end %>
-    <!--     </div>
-        </div>
-       </div> -->
+        <% end %>
+
     </div>
   </div>
-
-</div>
-
-
-
 <hr>
-
-<div>
-  <div>
-    <div>
-
-    </div>
-  </div>
-</div>
-
-
-
