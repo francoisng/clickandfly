@@ -1,30 +1,28 @@
-<h1 class="container"> Hello, <%=@user.email%></h1>
-
-<div>
-<% @user.bookings.each do |booking| %>
-  <div>
-    <ul>
-   <strong><li > <%= booking.airplane.model %> : </li> </strong>
-   From <%= booking.start_date %> to <%= booking.end_date %>
-
-   </ul>
+<div class="container">
+  <h1>Hello, <%=@user.email%> 😊</h1> 
+  <br>
+  <h2>My bookings</h2>
+  <div class="cards">
+    <% @user.bookings.each do |booking| %>
+      <div class="card-product">
+      <%= cl_image_tag booking.airplane.photos.first %>
+      <%# <img src="airplane.photos.first" /> %>
+        <div class="card-product-infos">
+          <h2><%= booking.airplane.model %></h2>
+            <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-
-<% end %>
+  <hr>
+  <h2>My planes</h2>
+    <% @user.airplanes.each do |airplane| %>
+      <% if @user.airplanes.empty? %>
+        <p>You have no planes yet</p>
+      <% else %>
+      <ul>
+        <strong><%= airplane.model %></strong>
+      </ul>
+      <% end %>
+    <% end %>
 </div>
-
-
-<hr>
-<h1>My planes</h1>
-<% @user.airplanes.each do |airplane| %>
-  <% if @user.airplanes.empty? %>
-  <p>You have no planes yet</p>
-  <% else %>
-  <ul>
-  <li> <%= airplane.model %></li>
-  </ul>
-  <% end %>
-<% end %>
-
-
