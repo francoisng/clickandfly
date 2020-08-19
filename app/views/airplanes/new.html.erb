@@ -10,6 +10,7 @@
             <%= f.input :range %>
             <%= f.input :address %>
             <%= f.input :daily_price %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
             <%= f.button :submit, class: 'btn btn-primary' %>
           <% end %>
         <% else %>

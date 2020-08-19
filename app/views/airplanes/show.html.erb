@@ -2,6 +2,9 @@
 
 <div class="container">
    <h1 class="border border-secondary" class= "rounded"><%= @airplane.model%></h1>
+      <% @airplane.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
       <p><strong>> Propriétaire du jet:</strong> <%= @airplane.user_id %></p>
       <p><strong>> Modèle du jet:</strong> <%= @airplane.model %></p>
       <p><strong>> Catégorie du jet:</strong> <%= @airplane.category %></p>
