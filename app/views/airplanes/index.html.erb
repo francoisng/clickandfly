@@ -6,7 +6,7 @@
       <div class="card mt-2" style="width: 22rem;">
         <%= link_to airplane_path(airplane) do %>
           <% if airplane.photos.first %>
-            <%= cl_image_tag airplane.photos.first.key, crop: : fill, id: 'photo' %>
+            <%= cl_image_tag airplane.photos.first.key, crop: :fill, id: 'photo' %>
           <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= airplane.model %></h5>
