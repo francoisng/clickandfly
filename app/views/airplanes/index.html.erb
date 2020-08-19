@@ -1,13 +1,20 @@
- <div class="container">
-   <h1 class="border border-secondary" >Liste de tous les jets</h1>
+ 
+<div class="container">
+  <h1 class="border border-secondary" >Private jets available around the world</h1>
+  <div class="row justify-content-between">
     <% @airplanes.each do |airplane| %>
-      <%= link_to airplane_path(airplane) do %>
-      <% if airplane.photos.first %>
-        <%= cl_image_tag airplane.photos.first.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <p> <strong>Modèle du jet:</strong> <%= airplane.model %></p>
-      <p> <strong>Localisation :</strong><%= airplane.address %></p>
-      <p> <strong>Prix à la journée: </strong><%= airplane.daily_price %> €</p>
+      <div class="card mt-2" style="width: 22rem;">
+        <%= link_to airplane_path(airplane) do %>
+          <% if airplane.photos.first %>
+            <%= cl_image_tag airplane.photos.first.key, crop: : fill, id: 'photo' %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= airplane.model %></h5>
+            <p class="card-text">Location: <%= airplane.address %></p>
+            <p class="card-text">Daily price: €<%= airplane.daily_price %></p>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-   <% end %>
- </div>
+  </div>
+</div>
