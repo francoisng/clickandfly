@@ -14,3 +14,17 @@
 <% end %>
 </div>
 
+
+<hr>
+<h1>My planes</h1>
+<% @user.airplanes.each do |airplane| %>
+  <% if @user.airplanes.empty? %>
+  <p>You have no planes yet</p>
+  <% else %>
+  <ul>
+  <li> <%= airplane.model %></li>
+  </ul>
+  <% end %>
+<% end %>
+
+
