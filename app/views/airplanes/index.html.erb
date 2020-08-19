@@ -5,8 +5,8 @@
       <% if airplane.photos.first %>
         <%= cl_image_tag airplane.photos.first.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <p> <strong> Modèle du jet:</strong> <%= airplane.model %></p>
-      <p> <strong> Localisation :</strong><%= airplane.address %></p>
+      <p> <strong>Modèle du jet:</strong> <%= airplane.model %></p>
+      <p> <strong>Localisation :</strong><%= airplane.address %></p>
       <p> <strong>Prix à la journée: </strong><%= airplane.daily_price %> euros</p>
     <% end %>
    <% end %>
