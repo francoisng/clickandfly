@@ -5,13 +5,12 @@
       <% @airplane.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <p><strong>> Propriétaire du jet:</strong> <%= @airplane.user_id %></p>
-      <p><strong>> Modèle du jet:</strong> <%= @airplane.model %></p>
-      <p><strong>> Catégorie du jet:</strong> <%= @airplane.category %></p>
-      <p><strong>> Distance:</strong> <%= @airplane.range %></p>
-      <p><strong>> Capacité :</strong><%= @airplane.seat_capacity %></p>
-      <p><strong>> Localisation :</strong><%= @airplane.address %></p>
-      <p><strong>> Prix à la journée: </strong><%= @airplane.daily_price %></p>
+      <p><strong>> Model of the airplane:</strong> <%= @airplane.model %></p>
+      <p><strong>> Category of the airplane:</strong> <%= @airplane.category %></p>
+      <p><strong>> Range:</strong> <%= @airplane.range%> km </p>
+      <p><strong>> Capacity : </strong><%= @airplane.seat_capacity %> people</p>
+      <p><strong>> Location : </strong><%= @airplane.address %></p>
+      <p><strong>> Price for a day: </strong><%= @airplane.daily_price %> euros</p>
 
     <div class="row justify-content-center">
       <div class="col-md-8">
@@ -26,6 +25,6 @@
   </div>
 
 
-  <%= link_to "Retourner à la Liste des jets", airplanes_path, class: "btn btn-primary" %>
+  <%= link_to "Back to airplanes List", airplanes_path, class: "btn btn-primary" %>
 
 
