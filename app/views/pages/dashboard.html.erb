@@ -5,11 +5,15 @@
   <div class="cards">
     <% @user.bookings.each do |booking| %>
       <div class="card-product">
-      <%= cl_image_tag booking.airplane.photos.first %>
-      <%# <img src="airplane.photos.first" /> %>
+      <% if booking.airplane.photos.first %>
+        <%= cl_image_tag booking.airplane.photos.first.key, crop: :fill %>
+      <% end %>
         <div class="card-product-infos">
           <h2><%= booking.airplane.model %></h2>
             <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
+            <%= link_to "Delete this booking ?", booking_path(booking), method: :delete, data: { confirm: "Are you sure ?"} %>
+            <br>
+            <%= link_to "Want to modify this booking ?", edit_booking_path(booking) %>
         </div>
       </div>
     <% end %>

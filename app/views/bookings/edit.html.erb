@@ -1,0 +1,7 @@
+<div class="booking-form row ml-5">
+      <%= simple_form_for [@booking] do |f| %>
+         <strong> <%= f.input :start_date %> </strong>
+          <strong>  <%= f.input :end_date %> </strong>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+</div>

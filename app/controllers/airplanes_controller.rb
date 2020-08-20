@@ -1,7 +1,11 @@
 class AirplanesController < ApplicationController
 
   def index
-    @airplanes = policy_scope(Airplane).order(created_at: :desc)
+    if params[:query].present?
+      @airplanes = policy_scope(Airplane.search_by_model_and_category(params[:query]))
+    else
+      @airplanes = policy_scope(Airplane.all)
+    end
   end
 
   def show
