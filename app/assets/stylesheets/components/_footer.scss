@@ -1,21 +1,21 @@
 .footer {
-  background: #f8faef;
+  background: #413838;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 50px;
   padding: 0px 50px;
-  color: #413838;
+  color: #f8faef;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: #413838;
+  color: #f8faef;
   opacity: 0.15;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 15px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
