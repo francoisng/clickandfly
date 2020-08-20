@@ -12,6 +12,7 @@
         <div class="card-product-infos">
           <h2><%= booking.airplane.model %></h2>
             <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
+            <%= link_to "Delete my booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure ?"} %>
         </div>
       </div>
     <% end %>
