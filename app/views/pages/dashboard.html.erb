@@ -8,7 +8,6 @@
       <% if booking.airplane.photos.first %>
         <%= cl_image_tag booking.airplane.photos.first.key, crop: :fill %>
       <% end %>
-      <%# <img src="airplane.photos.first" /> %>
         <div class="card-product-infos">
           <h2><%= booking.airplane.model %></h2>
             <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
