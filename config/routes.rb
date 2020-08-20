@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :bookings, only: [:destroy]
   resources :airplanes do
     resources :bookings, only: [:create]
   end
