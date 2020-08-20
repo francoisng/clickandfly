@@ -1,8 +1,7 @@
 class AirplanesController < ApplicationController
   def index
     if params[:query].present?
-      @airplanes = policy_scope(Airplane.search_by_model_and_category(params[:query]).geocoded )
-
+      @airplanes = policy_scope(Airplane.search_by_model_and_category(params[:query]).geocoded)
     else
       @airplanes = policy_scope(Airplane.all.geocoded)
     end
@@ -12,15 +11,22 @@ class AirplanesController < ApplicationController
         lat: airplane.latitude,
         lng: airplane.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { airplane: airplane }),
-        image_url: helpers.asset_url('private_jet_icon.png')
+        image_url: helpers.asset_url("private_jet_icon.png"),
       }
     end
   end
 
   def show
-    @airplane = Airplane.find(params[:id])
+    @airplane = Airplane.geocoded.find(params[:id])
     @booking = Booking.new
     authorize @airplane
+    @markers = [@airplane].map 
+      {
+        lat: @airplane.latitude,
+        lng: @airplane.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { airplane: @airplane }),
+        image_url: helpers.asset_url("private_jet_icon.png"),
+      }
   end
 
   def new
