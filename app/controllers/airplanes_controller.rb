@@ -31,6 +31,26 @@ class AirplanesController < ApplicationController
     authorize @airplane
   end
 
+  def destroy
+    @airplane = Airplane.find(params[:id])
+    authorize @airplane
+    @airplane.destroy
+    redirect_to dashboard_path
+  end
+
+  def edit
+    @airplane = Airplane.find(params[:id])
+    authorize @airplane
+  end
+
+  def update
+    @airplane = Airplane.find(params[:id])
+    authorize @airplane
+    @airplane.update(airplane_params)
+    redirect_to dashboard_path
+    # Will raise ActiveModel::ForbiddenAttributesError
+  end
+
   private
 
   def airplane_params

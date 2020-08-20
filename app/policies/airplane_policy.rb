@@ -14,6 +14,15 @@ class AirplanePolicy < ApplicationPolicy
     def show?
       return true
     end
+
+    def destroy?
+      return true
+      # record.user == user
+    end
+
+    def update?
+      record.user == user
+    end
     # def update?
     #   record.user == user
     #   # - record: the restaurant passed to the `authorize` method in controller

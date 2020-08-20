@@ -12,9 +12,9 @@
         <div class="card-product-infos">
           <h2><%= booking.airplane.model %></h2>
             <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
-            <%= link_to "Delete this booking ?", booking_path(booking), method: :delete, data: { confirm: "Are you sure ?"} %>
+            <%= link_to "+ Modify this booking", edit_booking_path(booking) %>
             <br>
-            <%= link_to "Want to modify this booking ?", edit_booking_path(booking) %>
+            <%= link_to "- Delete this booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure ?"} %>
         </div>
       </div>
     <% end %>
@@ -27,6 +27,10 @@
       <% else %>
       <ul>
         <strong><%= airplane.model %></strong>
+        <br>
+        <%= link_to "+ Modify this plane", edit_airplane_path(airplane) %>
+        <br>
+        <%= link_to "- Delete this plane", airplane_path(airplane), method: :delete, data: { confirm: "Are you sure ?"} %>
       </ul>
       <% end %>
     <% end %>
