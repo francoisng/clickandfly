@@ -1,20 +1,26 @@
  
 <div class="container">
-  <h1 class="border border-secondary" >Private jets available around the world</h1>
-  <div class="row justify-content-between">
+  <br>
+  <h1 style="text-align: center; font-weight: bold;">Our private jets around the world</h1>
+  <br>
+  <div class="card-box">
     <% @airplanes.each do |airplane| %>
-      <div class="card mt-2" style="width: 22rem;">
-        <%= link_to airplane_path(airplane) do %>
-          <% if airplane.photos.first %>
-            <%= cl_image_tag airplane.photos.first.key, crop: :fill, id: 'photo' %>
-          <% end %>
-          <div class="card-body">
-            <h5 class="card-title"><%= airplane.model %></h5>
-            <p class="card-text">Location: <%= airplane.address %></p>
-            <p class="card-text">Daily price: €<%= airplane.daily_price %></p>
+    <div class="card-trip">
+      <%= link_to airplane_path(airplane) do %>
+        <% if airplane.photos.first %>
+          <%= cl_image_tag airplane.photos.first.key, crop: :fill, id: 'photo' %>
+        <% end %>    
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= airplane.model %></h2>
+            <p><%= airplane.address %></p>
           </div>
-        <% end %>
-      </div>
+          <h2 class="card-trip-pricing"><%= airplane.daily_price %> €</h2>
+        </div>
+      <% end %>
+    </div>
     <% end %>
+    <%# <div class= float right>
+    </div> %>
   </div>
 </div>
