@@ -20,7 +20,21 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
-    redirect_to airplanes_path(@booking.airplane)
+    redirect_to dashboard_path(@booking.airplane)
+  end
+
+
+  def edit
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.update(booking_params)
+    redirect_to dashboard_path
+    # Will raise ActiveModel::ForbiddenAttributesError
   end
 
   private
