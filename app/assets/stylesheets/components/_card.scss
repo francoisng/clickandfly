@@ -1,3 +1,13 @@
+.container-2 {
+  width: 100%;
+  display: flex;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
 .cards {
 /*     display: grid; */
     grid-template-columns: 1fr 1fr 1fr;
@@ -56,15 +66,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 60%;
+  flex-grow: 1;
 }
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 30%;
   border-radius: 4px;
-  margin-bottom: 5px;
-  width: 326px;
+  margin: 10px;
+  width: 325px;
+  max-height: 270px;
 }
 
 .card-trip img {
