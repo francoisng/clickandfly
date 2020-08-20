@@ -1,27 +1,32 @@
-
-
-  <div class="booking mt-3">
-    <div class= "one ml-5">
-      <h1><%= @airplane.model%></h1>
+<div class="container container-show">
+  <div class= "one ">
        <% @airplane.photos.each do |photo| %>
-       <%= cl_image_tag photo.key, height: 250, width: 350, crop: :fill %>
-      <% end %>
-    </div>
+       <div> <%= cl_image_tag photo.key, height: 250, width: 350, crop: :fill, class: "imageshow" %> </div>
+       <% end %>
+  </div>
 
-    <div class="airplane-infos ml-5">
-      <li><strong> Category of the airplane:</strong> <%= @airplane.category %></li>
-      <li><strong> Range:</strong> <%= @airplane.range%> km </li>
-      <li><strong> Capacity : </strong><%= @airplane.seat_capacity %> people</li>
-      <li><strong> Location : </strong><%= @airplane.address %></li>
-      <li><strong> Price for a day: </strong><%= @airplane.daily_price %> euros</li>
+
+  <div class="description-booking">
+    <div class="airplane-infos ml-10">
+      <h1><strong><%= @airplane.model%></strong></h1>
+      <p></p><strong> Category:</strong> <%= @airplane.category %></p>
+      <p><strong> Range:</strong> <%= @airplane.range%> km </p>
+      <p></p><strong> Capacity : </strong><%= @airplane.seat_capacity %> people</p>
+      <p><strong> Location : </strong><%= @airplane.address %></p>
+      <p></p><%= @airplane.daily_price%> euros/day</p>
    </div>
-   <div class="booking-form row ml-5">
+
+   <div class="booking-form">
       <%= simple_form_for [@airplane, @booking] do |f| %>
          <strong> <%= f.input :start_date %> </strong>
           <strong>  <%= f.input :end_date %> </strong>
-          <%= f.button :submit, class: 'btn btn-primary' %>
+           <strong> <%= f.button :submit, class: 'btn btn-dark' %> </strong>
         <% end %>
-
     </div>
   </div>
-<hr>
+
+
+  <div>
+    <h1 class="Location"><strong>Location</strong></h1>
+  </div>
+</div>
