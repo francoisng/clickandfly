@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
+Airplane.destroy_all
 User.destroy_all
 
 User.create!(email: "mikail@gmail.com", password: "mikail")
@@ -21,7 +23,9 @@ location = ["94390 Orly", "Charles de Gaulle, 95700 Roissy-en-France", "Dubai - 
 users = User.all
 model.each do |model|
   category = ["Regional jet", "Light jet", "Medium jet", "Long haul jet" ]
-  Airplane.create!(address: location.sample, model: model, category: category.sample, seat_capacity: rand(10..25), range: rand(1100.0..5000).round(3), daily_price: rand(3000..15000), user: users.sample) 
+  airplane = Airplane.create!(address: location.sample, model: model, category: category.sample, seat_capacity: rand(10..25), range: rand(1100.0..5000).round(3), daily_price: rand(3000..15000), user: users.sample) 
+  file = File.open("app/assets/images/dassault_falcon.jpg")
+  airplane.photos.attach(io: file, filename: "airplane")
 end
 
 # airplaine1.user = user1
