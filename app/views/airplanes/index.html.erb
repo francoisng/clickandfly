@@ -1,7 +1,14 @@
- 
 <div class="container">
+  <%= form_tag airplanes_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a jet"
+  %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %> 
   <br>
-  <h1 style="text-align: center; font-weight: bold;">Our private jets around the world</h1>
+  <h1 class="text-align: center; font-weight: bold;" >Our private jets around the world</h1>
   <br>
   <div class="card-box">
     <% @airplanes.each do |airplane| %>
