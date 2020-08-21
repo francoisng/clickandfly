@@ -3,7 +3,6 @@
   <h1 style="text-align: center; font-weight: bold;">Hello, <%=@user.email%> 😊</h1> 
   <br>
   <h2 style="font-weight: bold; margin-left: 10px;">My bookings</h2>
-  <h5 style="margin-left: 10px;">Future</h5>
   <div class="cards-dashboard">
     <% @user.bookings.each do |booking| %>
       <div class="card-product">
@@ -26,7 +25,6 @@
       </div>
     <% end %>
   </div>
-  <h5 style="margin-left: 10px;">Past</h5>
   <hr style="border-top: 10px solid rgba(0, 0, 0, 0.1);">
   <h2 style="font-weight: bold; margin-left: 10px;">My planes</h2>
   <div class="cards-dashboard" style="margin-bottom: 10px;">
