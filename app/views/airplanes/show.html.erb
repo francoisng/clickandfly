@@ -1,17 +1,15 @@
 <div class="container container-show">
-  <div id="titre">
-    <h1><strong><%= @airplane.model.upcase%></strong></h1>
-  </div>
+  <div id="titre"><h1><strong><%= @airplane.model %></strong></h1></div>
   <div class= "one ">
     <% @airplane.photos.each do |photo| %>
       <div class="grid-adjuster"><%= cl_image_tag photo.key, crop: :fill, class: "imageshow" %></div>
     <% end %>
   </div>
-  <hr>
+  <hr style="border-top: 1px solid #6C757D;">
   <div class="description-booking">
     <div class="airplane-infos ml-10">
-      <p><i class="fas fa-plane"></i><strong> Category:</strong> <%= @airplane.category %></p>
-      <p><i class="fas fa-exchange-alt"></i><strong> Range:</strong> <%= @airplane.range%> km </p>
+      <p><i class="fas fa-plane"></i><strong> Category :</strong> <%= @airplane.category %></p>
+      <p><i class="fas fa-exchange-alt"></i><strong> Range :</strong> <%= @airplane.range%> km </p>
       <p><i class="fas fa-chair"></i><strong> Capacity : </strong><%= @airplane.seat_capacity %> people</p>
       <p><i class="fas fa-location-arrow"></i><strong> Location : </strong><%= @airplane.address %></p>
       <p id="price"><i class="fab fa-angellist"></i><strong><%= @airplane.daily_price%> euros/day</p>

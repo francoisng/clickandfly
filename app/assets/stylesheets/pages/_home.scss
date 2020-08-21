@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .content-wrapper {
-  min-height: calc(100vh - 83px - 100px);
+  min-height: calc(100vh - 83px - 52px);
 }
 
 .home-background{
@@ -30,10 +30,16 @@
   color:  #efe1b4;
   font-size: 45px;
   margin-top: 90px;
+  position: absolute;
+}
+
+.content {
+  position: relative;
 }
 
 .form-row {
-  margin-top: 150px;
+  position: absolute;
+  margin-top: 140px;
 }
 
 .lab {
