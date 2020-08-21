@@ -12,17 +12,16 @@
       <% end %>
         <div class="card-product-infos">
           <h2><%= booking.airplane.model %></h2>
-            <p style="margin-bottom: 7px;">From <%= booking.start_date %> to <%= booking.end_date %></p>
-            <p>Total price: <%= number_with_precision(booking.airplane.daily_price * (booking.end_date - booking.start_date).to_f, precision: 0, delimiter:' ') %>€ (<span><%= number_with_precision((booking.end_date - booking.start_date).to_f, precision: 0) %> days</span>)</p>
-            <!-- <p><%= number_with_precision((booking.end_date - booking.start_date).to_f, precision: 0) %> days</p> -->
-            <%= link_to edit_booking_path(booking) do %>
-              <i class="fas fa-pencil-alt"></i> Modify your booking
-            <% end  %>
-
-            <br>
-            <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you really sure ?"} do %>
-              <i class="fas fa-trash"></i> Delete your booking
-            <% end %>
+          <p>From <%= booking.start_date %> to <%= booking.end_date %>
+          <br>
+          Total price: <%= number_with_precision(booking.airplane.daily_price * (booking.end_date - booking.start_date).to_f, precision: 0, delimiter:' ') %>€ (<span><%= number_with_precision((booking.end_date - booking.start_date).to_f, precision: 0) %> days</span>)</p>
+          <%= link_to edit_booking_path(booking) do %>
+            <p><i class="fas fa-pencil-alt"></i> Modify your booking
+          <% end  %>
+          <br>
+          <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you really sure ?"} do %>
+            <i class="fas fa-trash"></i> Delete your booking</p>
+          <% end %>
         </div>
       </div>
     <% end %>
@@ -38,9 +37,13 @@
         <% end %>
         <div class="card-product-infos">
           <h2 style="margin-bottom: 20px;"><%= airplane.model %></h2>            
-            <%= link_to "▶ Modify this airplane", edit_airplane_path(airplane) %>
+            <p><%= link_to edit_airplane_path(airplane) do %>
+                <i class="fas fa-pencil-alt"></i> Modify your plane
+            <% end %>
             <br>
-            <%= link_to "✖ Cancel this airplane", airplane_path(airplane), method: :delete, data: { confirm: "Are you sure ?"} %>
+            <%= link_to airplane_path(airplane), method: :delete, data: { confirm: "Are you sure ?"} do %>
+              <i class="fas fa-trash"></i> Delete your booking</p>
+            <% end %>
         </div>
       </div>
     <% end %>
