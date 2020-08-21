@@ -12,15 +12,15 @@
       <p><i class="fas fa-exchange-alt"></i><strong> Range :</strong> <%= @airplane.range%> km </p>
       <p><i class="fas fa-chair"></i><strong> Capacity : </strong><%= @airplane.seat_capacity %> people</p>
       <p><i class="fas fa-location-arrow"></i><strong> Location : </strong><%= @airplane.address %></p>
-      <p id="price"><i class="fab fa-angellist"></i><strong> <%= @airplane.daily_price%> euros/day</p></strong>
-   </div>
-
-   <div class="booking-form">
+      <p id="price"><i class="fab fa-angellist"></i><strong><%= @airplane.daily_price%> euros/day</p>
+      </strong>
+    </div>
+    <div class="booking-form">
       <%= simple_form_for [@airplane, @booking] do |f| %>
-         <strong> <%= f.input :start_date %> </strong>
-          <strong>  <%= f.input :end_date %> </strong>
-           <strong> <%= f.button :submit, class: 'btn-search-2' %> </strong>
-        <% end %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "range_start"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "range_end"} %>
+        <%= f.button :submit, class: 'btn btn-secondary btn-lg btn-block ' %>
+      <% end %>
     </div>
   </div>
   <div id="map"
