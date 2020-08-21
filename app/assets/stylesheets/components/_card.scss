@@ -12,7 +12,17 @@
 /*     display: grid; */
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
+    display: flex;
+    justify-content: space-between;
   }
+
+.cards-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: space-between;
+  border-radius: 20px;
+}
   
 .card-category {
   background-size: cover;
@@ -36,11 +46,12 @@
   display: flex;
   align-items: center;
   margin: 10px;
+  border-radius: 20px;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 50%;
   object-fit: cover;
 }
 
@@ -60,6 +71,7 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  padding-left: 35px;
 }
 
 .card-box {
@@ -76,6 +88,7 @@
   margin: 10px;
   width: 325px;
   max-height: 270px;
+  border-radius: 20px;
 }
 
 .card-trip img {

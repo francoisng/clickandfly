@@ -1,35 +1,29 @@
 <div class="container container-show">
-
-  <div id="titre"><h1><strong><%= @airplane.model.upcase%></strong></h1></div>
-
+  <div id="titre"><h1><strong><%= @airplane.model %></strong></h1></div>
   <div class= "one ">
-       <% @airplane.photos.each do |photo| %>
-       <div class="grid-adjuster"><%= cl_image_tag photo.key, crop: :fill, class: "imageshow" %></div>
-       <% end %>
+    <% @airplane.photos.each do |photo| %>
+      <div class="grid-adjuster"><%= cl_image_tag photo.key, crop: :fill, class: "imageshow" %></div>
+    <% end %>
   </div>
-
   <hr style="border-top: 1px solid #6C757D;">
-
-
   <div class="description-booking">
     <div class="airplane-infos ml-10">
-      <p><i class="fas fa-plane"></i><strong> Category:</strong> <%= @airplane.category %></p>
-      <p><i class="fas fa-exchange-alt"></i><strong> Range:</strong> <%= @airplane.range%> km </p>
+      <p><i class="fas fa-plane"></i><strong> Category :</strong> <%= @airplane.category %></p>
+      <p><i class="fas fa-exchange-alt"></i><strong> Range :</strong> <%= @airplane.range%> km </p>
       <p><i class="fas fa-chair"></i><strong> Capacity : </strong><%= @airplane.seat_capacity %> people</p>
       <p><i class="fas fa-location-arrow"></i><strong> Location : </strong><%= @airplane.address %></p>
-      <p id="price"><i class="fab fa-angellist"></i><strong><%= @airplane.daily_price%> euros/day</p></strong>
+      <p id="price"><i class="fab fa-angellist"></i><strong> <%= @airplane.daily_price%> euros/day</p></strong>
    </div>
 
    <div class="booking-form">
       <%= simple_form_for [@airplane, @booking] do |f| %>
          <strong> <%= f.input :start_date %> </strong>
           <strong>  <%= f.input :end_date %> </strong>
-           <strong> <%= f.button :submit, class: 'btn btn-secondary btn-lg btn-block ' %> </strong>
+           <strong> <%= f.button :submit, class: 'btn-search-2' %> </strong>
         <% end %>
     </div>
   </div>
-
-<div id="map"
+  <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
