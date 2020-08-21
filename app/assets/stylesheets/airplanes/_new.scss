@@ -1,7 +1,7 @@
 .card-category {
     background-size: cover;
     background-position: center;
-    height: 90px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,13 +11,25 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-bottom-style: solid
+    border-style: solid;
+    border-width:25px;
+
     }
 
 #add {
-
 color: white;
+}
 
+
+.avion {
+position: relative;
 
 }
 
+.avion_image {
+  position: absolute;
+  bottom: 28px;
+  right: 0px;
+  transform: rotate(-25deg);
+  color: #413838;
+}

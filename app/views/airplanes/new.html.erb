@@ -1,20 +1,19 @@
 
 
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(https://i.pinimg.com/originals/39/c8/c3/39c8c37de3e4cfe75814042b14978233.jpg)">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://www.pro-sky.com/files/de/content/1.png)">
 <h1 id="add"> <i class="fas fa-globe-europe"></i><strong> ADD YOUR PLANE ! </strong></h1>
 </div>
-
 
 
 <br>
 
   <div class="container ">
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-md-8 avion">
       <!--   <h1 style="text-align: center;">Add your plane</h1> -->
         <% if policy(Airplane).create? %>
           <%= simple_form_for @airplane do |f| %>
-            <%= f.input :model, collection: ["Cessna Denali", "Cessna Caravan", "Cirrus SR20", "Cirrus SR22", "Dassault Falcon", "Gulfstream G700"] %>
+            <%= f.input :model, collection: ["Cessna Denali", "Cessna Caravan", "Cirrus SR20", "Cirrus SR22", "Dassault Falcon", "Gulfstream G700"]%>
             <%= f.input :category, collection: ["Regional jet", "Light jet", "Medium jet", "Long haul jet" ] %>
             <%= f.input :seat_capacity %>
             <%= f.input :range %>
@@ -23,6 +22,7 @@
             <%= f.input :photos, as: :file, input_html: { multiple: true } %>
             <%= f.button :submit, class: 'btn btn-secondary btn-lg btn-block' %>
           <% end %>
+            <i class="fas fa-plane fa-2x avion_image"></i>
         <% else %>
           <h2>You cannot add a plane, you need permissions !</h2>
         <% end %>
