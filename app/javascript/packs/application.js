@@ -27,12 +27,16 @@ import "mapbox-gl/dist/mapbox-gl.css";
 // Internal imports, e.g:
 import { initMapbox } from "../plugins/init_mapbox";
 import { initFlatpickr } from "../plugins/flatpickr";
-
+import { initSweetalert } from "../plugins/init_sweetalert";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener("turbolinks:load", () => {
-  initMapbox();
-  initFlatpickr();
   // Call your functions here, e.g:
   // initSelect2();
+  initMapbox();
+  initFlatpickr();
+  initSweetalert();
 });
+
+const input_start = document.querySelector("#new_booking > div.form-group.string.optional.booking_start_date > input.form-control.string.optional.input")
+const input_end = document.querySelector("#end_date")
