@@ -10,7 +10,11 @@
       <% end %>
         <div class="card-product-infos">
           <h2><%= booking.airplane.model %></h2>
-            <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
+            <p>From <%= booking.start_date %> to <%= booking.end_date %> (<%= (booking.end_date - booking.start_date).to_i %> days)</p>
+
+            <p>Total price: <%= number = number_with_precision(booking.airplane.daily_price * (booking.end_date - booking.start_date).to_i, precision: 0, delimiter: ' ') %> €</p>
+             <!--<p>Total price: <%= number_with_precision(number, :precision => 2, :delimiter => ' ')%> €</p> -->
+
             <%= link_to "+ Modify this booking", edit_booking_path(booking) %>
             <br>
             <%= link_to "- Delete this booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure ?"} %>

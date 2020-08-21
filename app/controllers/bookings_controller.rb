@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path(@booking.airplane)
   end
 
-
+  
   def edit
     @booking = Booking.find(params[:id])
     authorize @booking
