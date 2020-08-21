@@ -18,7 +18,7 @@
       </strong>
     </div>
     <div class="booking-form">
-      <%= simple_form_for [@airplane, @booking], method: "get" do |f| %>
+      <%= simple_form_for [@airplane, @booking] do |f| %>
         <%= f.input :start_date, as: :string, required: false, input_html: {class: "range_start"} %>
         <%= f.input :end_date, as: :string, required: false, input_html: {class: "range_end"} %>
         <%= f.button :submit, class: 'btn btn-secondary btn-lg btn-block ' %>

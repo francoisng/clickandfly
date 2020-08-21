@@ -9,6 +9,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; 
+  background-color: linear-gradient rgba(0,0,0,6);
 }
 
 .linewhite {
@@ -28,10 +29,11 @@
 .tag-line {
   color:  #efe1b4;
   font-size: 45px;
+  margin-top: 90px;
 }
 
-.home-background {
-  background-color: linear-gradient rgba(0,0,0,6);
+.form-row {
+  margin-top: 150px;
 }
 
 .lab {
