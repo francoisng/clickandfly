@@ -1,8 +1,10 @@
 <div class="container">
-  <h1>Hello, <%=@user.email%> 😊</h1> 
   <br>
-  <h2>My bookings</h2>
-  <div class="cards">
+  <h1 style="text-align: center; font-weight: bold;">Hello, <%=@user.email%> 😊</h1> 
+  <br>
+  <h2 style="font-weight: bold; margin-left: 10px;">My bookings</h2>
+  <h5 style="margin-left: 10px;">Future</h5>
+  <div class="cards-dashboard">
     <% @user.bookings.each do |booking| %>
       <div class="card-product">
       <% if booking.airplane.photos.first %>
@@ -10,27 +12,30 @@
       <% end %>
         <div class="card-product-infos">
           <h2><%= booking.airplane.model %></h2>
-            <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
-            <%= link_to "+ Modify this booking", edit_booking_path(booking) %>
+            <p style="margin-bottom: 7px;">From <%= booking.start_date %> to <%= booking.end_date %></p>
+            <%= link_to "▶ Modify this booking", edit_booking_path(booking) %>
             <br>
-            <%= link_to "- Delete this booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure ?"} %>
+            <%= link_to "✖ Cancel this booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure ?"} %>
         </div>
       </div>
     <% end %>
   </div>
-  <hr>
-  <h2>My planes</h2>
+  <h5 style="margin-left: 10px;">Past</h5>
+  <hr style="border-top: 10px solid rgba(0, 0, 0, 0.1);">
+  <h2 style="font-weight: bold; margin-left: 10px;">My planes</h2>
+  <div class="cards-dashboard" style="margin-bottom: 10px;">
     <% @user.airplanes.each do |airplane| %>
-      <% if @user.airplanes.empty? %>
-        <p>You have no planes yet</p>
-      <% else %>
-      <ul>
-        <strong><%= airplane.model %></strong>
-        <br>
-        <%= link_to "+ Modify this plane", edit_airplane_path(airplane) %>
-        <br>
-        <%= link_to "- Delete this plane", airplane_path(airplane), method: :delete, data: { confirm: "Are you sure ?"} %>
-      </ul>
-      <% end %>
+      <div class="card-product">
+        <% if airplane.photos.first %>
+          <%= cl_image_tag airplane.photos.first.key, crop: :fill %>
+        <% end %>
+        <div class="card-product-infos">
+          <h2 style="margin-bottom: 20px;"><%= airplane.model %></h2>            
+            <%= link_to "▶ Modify this airplane", edit_airplane_path(airplane) %>
+            <br>
+            <%= link_to "✖ Cancel this airplane", airplane_path(airplane), method: :delete, data: { confirm: "Are you sure ?"} %>
+        </div>
+      </div>
     <% end %>
+  </div>
 </div>
