@@ -6,58 +6,58 @@
 
 
 .airplane-infos {
-background-color:#FAFAFA;
- background-color:white;
- padding:18px;
- padding-top:20px;
- width:700px;
- text-align: center;
- border-width:1.5px;
- border-style:solid;
- border-color:black;
+ padding: 26px;
+    padding-top: 26px;
+width: 700px;
+text-align: justify;
+padding-top: 27px;
 }
-
-
 
 .booking-form {
- background-color:#FAFAFA;
- background-color:white;
- width:740px;
- height:250px;
- margin:20px;
- padding:20px;
- border-width:1.5px;
- border-style:solid;
- border-color:black;
+  width:740px;
+  height:250px;
+  margin-left:40px;
+  padding:20px;
+
 }
 
-
-// .container-show {
-//     padding-right: 9px;
-//     padding-top: 30px;
-//     padding-left: 20px;
-//     padding-bottom: 5px;
-//     margin-right: 3px;
-//     margin-left: 9px;
-// }
-
 .one {
-  padding: 5px;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 15px;
+  padding: 23px;
+  display: grid;
+  width:1140px;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 20px;
+  border-color:#413838
+}
+
+.grid-adjuster {
+  width: 350px;
+  height: 200px;
 }
 
 
 .location {
-margin-top: 60px;
+  margin-top: 60px;
 }
 
 .imageshow {
+  border-radius: 12px;
+  width:100%;
+  height:100%;
+  border-color:#413838;
+  border-width: 2px;
+}
+
+
+#price {
+ font-size: 25px;
+}
+
+#titre {
+  text-align:center;
+  font-size: 75px;
+  font-color:#413838;
 
 }
 
-.photo-modif {
-  padding: 5px;
-  border-radius: 10px;
-}
+
