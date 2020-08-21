@@ -1,15 +1,16 @@
-<div class="container">
-  <%= form_tag airplanes_path, method: :get do %>
+<div class="container" style="display: grid; justify-content: center;">
+  <%= form_tag airplanes_path, method: :get, class: 'd-flex mt-4' do %>
     <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
-    placeholder: "Find a jet"
-  %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    class: "form-control mr-2",
+    placeholder: "Find your jet here" %>
+    <%= submit_tag "Search", class: "btn-search" %>
   <% end %> 
-  <br>
-  <h1 class="text-align: center; font-weight: bold;" >Our private jets around the world</h1>
-  <br>
+</div>
+<br>
+<h1 style="text-align: center; font-weight: bold;" >🛫 Our private jets around the world 🛬</h1>
+<br>
+<div class="container-2">
   <div class="card-box">
     <% @airplanes.each do |airplane| %>
     <div class="card-trip">
@@ -27,12 +28,9 @@
       <% end %>
     </div>
     <% end %>
-    <%# <div class= float right>
-    </div> %>
+  </div>
+  <div id="map" style="width: 100%; height: 600px; margin-bottom: 10px; margin-top: 10px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
