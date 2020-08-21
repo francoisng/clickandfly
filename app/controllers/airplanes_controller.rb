@@ -19,14 +19,14 @@ class AirplanesController < ApplicationController
   def show
     @airplane = Airplane.geocoded.find(params[:id])
     @booking = Booking.new
+    @markers = 
+    [{
+      lat: @airplane.latitude,
+      lng: @airplane.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { airplane: @airplane }),
+      image_url: helpers.asset_url("private_jet_icon.png"),
+    }]
     authorize @airplane
-    @markers = [@airplane].map 
-      {
-        lat: @airplane.latitude,
-        lng: @airplane.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { airplane: @airplane }),
-        image_url: helpers.asset_url("private_jet_icon.png"),
-      }
   end
 
   def new

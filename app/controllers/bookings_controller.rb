@@ -20,9 +20,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
-    redirect_to dashboard_path(@booking.airplane)
+    redirect_to dashboard_path
   end
-
 
   def edit
     @booking = Booking.find(params[:id])
