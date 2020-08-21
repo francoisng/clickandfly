@@ -14,7 +14,6 @@
       <p><i class="fas fa-location-arrow"></i><strong> Location : </strong><%= @airplane.address %></p>
       <p id="price"><i class="fab fa-angellist"></i><strong> <%= @airplane.daily_price%> euros/day</p></strong>
    </div>
-
    <div class="booking-form">
   <%= simple_form_for [@airplane, @booking] do |f| %>
     <%= f.input :start_date, as: :string, required: false, input_html: { id: "start_date" } %>
