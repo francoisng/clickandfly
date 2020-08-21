@@ -15,6 +15,8 @@
             <p style="margin-bottom: 7px;">From <%= booking.start_date %> to <%= booking.end_date %></p>
             <%= link_to "▶ Modify this booking", edit_booking_path(booking) %>
             <br>
+            <%= link_to "- Delete this booking", booking_path(booking), method: :delete, data: { confirm: "Are you really sure ?"} %>
+
             <%= link_to "✖ Cancel this booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure ?"} %>
         </div>
       </div>
