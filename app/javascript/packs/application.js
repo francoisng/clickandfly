@@ -28,6 +28,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initSweetalert } from "../plugins/init_sweetalert";
+import { enableButton } from "../plugins/btn_show";
+
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener("turbolinks:load", () => {
@@ -36,6 +38,7 @@ document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initFlatpickr();
   initSweetalert();
+  enableButton();
 });
 
 const input_start = document.querySelector("#new_booking > div.form-group.string.optional.booking_start_date > input.form-control.string.optional.input")
